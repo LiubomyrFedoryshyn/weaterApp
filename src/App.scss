@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css?family=Poor+Story');
+
+
+.App {
+  position: relative;
+  background-color: rgb(1, 0, 10);
+  width: 80%;
+  margin: 0 auto;
+  height: 100vh;
+  color: white;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  &:before {
+      content: " ";
+      background-color: rgb(177, 41, 0);
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      top: 20%;
+      left: 15%;
+      border-radius: 50%;
+      animation: pulse 5s linear infinite;
+  }
+  &:after {
+    content: " ";
+    background-color: rgb(177, 41, 0);
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 30%;
+    left: 25%;
+    border-radius: 50%;
+    animation: move 5s linear infinite;
+  }
+}
+
+@keyframes pulse{
+    0%{transform: scale(1); opacity: 0.5;}
+    50%{transform: scale(1.2); opacity: 1;}
+    100%{transform: scale(1); opacity: 0.5;}
+}
+
+
+@keyframes move{
+    0%{transform: translateX(0);}
+    50%{transform: translateX(5px);}
+    100%{transform: translateX(0);}
+}
+
+body {
+  background-color: rgb(177, 41, 0);
+}
+
+.App .title {
+  text-align: center;
+  max-width: 400px;
+  padding: 0 100px;
+  font-size: 25px;
+  font-family: 'Poor Story', cursive;
+  color: rgb(1, 0, 10);
+  color: rgb(177, 41, 0);
+  position: absolute;
+}
+
+.App .form {
+    text-align: end;
+    padding: 0 30px;
+}
+
+.App .form input[type="text"] {
+      outline: none;
+      border: none;
+      margin-left: 1%;
+      font-family: 'Poor Story', cursive;
+      font-size: 18px;
+      background-color:  rgb(1, 0, 10);
+      color: rgb(177, 41, 0);
+      padding-left: 10px;
+      border-bottom: 1px solid rgb(177, 41, 0);
+      transition: 0.3s;
+      &:focus {
+          border-bottom: 1px solid rgb(7, 118, 111);
+      }
+}
+
+.App .form input[type="text"]::placeholder {
+  outline: none;
+  color: rgb(177, 41, 0);
+  background-color:  rgb(1, 0, 10);
+  padding-left: 1.5%;
+
+}
+
+.App .form button {
+  cursor: pointer;
+  text-align: center;
+  background-color: rgb(7, 118, 111); 
+  border: none;
+  color: rgb(1, 0, 10);
+  font-family: 'Poor Story', cursive;
+  font-size: 18px;
+  margin-left: 2%;
+  width: 110px;
+  padding: 5px 10px;
+  height: 30px;
+  transition: 0.3s;
+  outline: none;
+  &:focus {
+      display: none;
+  }
+}
+.App .form button:hover {
+  background-color: rgb(7, 167, 156)
+}
+
+.App .data {
+  font-family: 'Poor Story', cursive;
+  text-align: left;
+  color: rgb(177, 41, 0);
+  font-size: 18px;
+  position: absolute;
+  right: 1%;
+  top: 60%;
+  transform: translateX(-50%);
+}
+
+.App .data span {
+  color: rgb(7, 118, 111); 
+}
+
+@media only screen and (max-width: 1024px) {
+    .App {
+        .title {
+            padding: 0 50px;
+        }
+    }
+} 
+
+@media only screen and (max-width: 991px) {
+    .App {
+        .title {
+            h1 {
+                font-size: 24px;
+            }
+            p {
+                font-size: 19px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .App {
+        justify-content: start;
+        margin-top: 5%;
+        height: auto;
+        &::before {
+            top: 5%;
+            left: 5%;
+        }
+        &::after {
+            top: 15%;
+            left: 20%;
+        }
+        .title {
+            position: static;
+            text-align: center;
+            margin: 0 auto;
+        }
+        .form {
+            margin-top: 30px;
+            position: static;
+            text-align: center;
+        }
+        .data {
+            position: static;
+            transform: unset;
+            margin: 0 auto;
+            margin-top: 30px;
+        }
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .App {
+        &::before {
+            display: none;
+        }
+        &::after {
+            display: none;
+        }
+        .form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .form input[type="text"] {
+            margin-bottom: 30px;
+            text-align: center;
+            padding: 0;
+        }
+        .data {
+            text-align: center;
+            margin-top: 0;
+        }
+    }
+}

@@ -1,33 +1,302 @@
+@import url("https://fonts.googleapis.com/css?family=Poor+Story");
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  position: relative;
+  background-color: #01000a;
+  width: 80%;
+  margin: 0 auto;
+  height: 100vh;
   color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
-.App-link {
-  color: #61dafb;
+.App:before {
+  content: " ";
+  background-color: #b12900;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 20%;
+  left: 15%;
+  border-radius: 50%;
+  -webkit-animation: pulse 5s linear infinite;
+          animation: pulse 5s linear infinite;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.App:after {
+  content: " ";
+  background-color: #b12900;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 30%;
+  left: 25%;
+  border-radius: 50%;
+  -webkit-animation: move 5s linear infinite;
+          animation: move 5s linear infinite;
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 0.5;
   }
-  to {
-    transform: rotate(360deg);
+  50% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 0.5;
   }
 }
+
+@keyframes pulse {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 0.5;
+  }
+}
+
+@-webkit-keyframes move {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  50% {
+    -webkit-transform: translateX(5px);
+            transform: translateX(5px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@keyframes move {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  50% {
+    -webkit-transform: translateX(5px);
+            transform: translateX(5px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+body {
+  background-color: #b12900;
+}
+
+.App .title {
+  text-align: center;
+  max-width: 400px;
+  padding: 0 100px;
+  font-size: 25px;
+  font-family: 'Poor Story', cursive;
+  color: #01000a;
+  color: #b12900;
+  position: absolute;
+}
+
+.App .form {
+  text-align: end;
+  padding: 0 30px;
+}
+
+.App .form input[type="text"] {
+  outline: none;
+  border: none;
+  margin-left: 1%;
+  font-family: 'Poor Story', cursive;
+  font-size: 18px;
+  background-color: #01000a;
+  color: #b12900;
+  padding-left: 10px;
+  border-bottom: 1px solid #b12900;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.App .form input[type="text"]:focus {
+  border-bottom: 1px solid #07766f;
+}
+
+.App .form input[type="text"]::-webkit-input-placeholder {
+  outline: none;
+  color: #b12900;
+  background-color: #01000a;
+  padding-left: 1.5%;
+}
+
+.App .form input[type="text"]:-ms-input-placeholder {
+  outline: none;
+  color: #b12900;
+  background-color: #01000a;
+  padding-left: 1.5%;
+}
+
+.App .form input[type="text"]::-ms-input-placeholder {
+  outline: none;
+  color: #b12900;
+  background-color: #01000a;
+  padding-left: 1.5%;
+}
+
+.App .form input[type="text"]::placeholder {
+  outline: none;
+  color: #b12900;
+  background-color: #01000a;
+  padding-left: 1.5%;
+}
+
+.App .form button {
+  cursor: pointer;
+  text-align: center;
+  background-color: #07766f;
+  border: none;
+  color: #01000a;
+  font-family: 'Poor Story', cursive;
+  font-size: 18px;
+  margin-left: 2%;
+  width: 110px;
+  padding: 5px 10px;
+  height: 30px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  outline: none;
+}
+
+.App .form button:focus {
+  display: none;
+}
+
+.App .form button:hover {
+  background-color: #07a79c;
+}
+
+.App .data {
+  font-family: 'Poor Story', cursive;
+  text-align: left;
+  color: #b12900;
+  font-size: 18px;
+  position: absolute;
+  right: 1%;
+  top: 60%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.App .data span {
+  color: #07766f;
+}
+
+@media only screen and (max-width: 1024px) {
+  .App .title {
+    padding: 0 50px;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .App .title h1 {
+    font-size: 24px;
+  }
+  .App .title p {
+    font-size: 19px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .App {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+    margin-top: 5%;
+    height: auto;
+  }
+  .App::before {
+    top: 5%;
+    left: 5%;
+  }
+  .App::after {
+    top: 15%;
+    left: 20%;
+  }
+  .App .title {
+    position: static;
+    text-align: center;
+    margin: 0 auto;
+  }
+  .App .form {
+    margin-top: 30px;
+    position: static;
+    text-align: center;
+  }
+  .App .data {
+    position: static;
+    -webkit-transform: unset;
+            transform: unset;
+    margin: 0 auto;
+    margin-top: 30px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .App::before {
+    display: none;
+  }
+  .App::after {
+    display: none;
+  }
+  .App .form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .App .form input[type="text"] {
+    margin-bottom: 30px;
+    text-align: center;
+    padding: 0;
+  }
+  .App .data {
+    text-align: center;
+    margin-top: 0;
+  }
+}
+/*# sourceMappingURL=App.css.map */
