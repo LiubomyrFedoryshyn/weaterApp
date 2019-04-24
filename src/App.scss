@@ -195,6 +195,10 @@ body {
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            button {
+                margin-bottom: 30px;
+
+            }
         }
         .form input[type="text"] {
             margin-bottom: 30px;

@@ -289,6 +289,9 @@ body {
         -ms-flex-align: center;
             align-items: center;
   }
+  .App .form button {
+    margin-bottom: 30px;
+  }
   .App .form input[type="text"] {
     margin-bottom: 30px;
     text-align: center;
